@@ -1,14 +1,14 @@
 // Array
 // empty array to store currentWord objects
 const gameArray = [];
+let playAgain = true;
 
 // Function
 // that will return a random word within the wordPool array
 function wordGenerate() {
   const randomIndex = Math.floor(Math.random() * wordPool.length);
   gameArray.push(wordPool[randomIndex].toUpperCase());
-  const currentSplitWord = wordPool[randomIndex].toUpperCase().split("");
-  return currentSplitWord;
+  return [" ", " ", " ", " "];
 }
 
 // Function
@@ -23,24 +23,67 @@ function storeLocalStorage(currentWord) {
   localStorage.setItem("currentWord", JSON.stringify(currentWord));
 }
 
-// Function
-// for the Birdle game
-function birdleGame() {
-  const maxAttempts = 5;
-  let attempts = 0;
+function exitGame() {
+  playAgain = confirm("Do you want to continue?");
+  if (!playAgain) {
+    return;
+  }
 
-  while (attempts < maxAttempts) {
-    let guess = prompt("Enter a 4-letter word:").toUpperCase().split("");
+  startBirdleGame();
+}
 
-    if (!guess) {
-      return;
-    }
+function playAgain() {
+  const maxAttempt = 6;
+  let attempt = 0;
+  while (attempt < maxAttempt) {
+    startBirdleGame();
+  }
+  // Todo: This is where you call the function to update score and statistics
+  console.log('endGame')
+};
 
-    for (let guessCount = 0; guessCount < guess.length; guessCount++) {
-      for (let currentBoardCount = 0; currentBoardCount < gameArray[gameArray.length - 1].length; currentBoardCount++) {
-        if ()
+function verifyIfDone(match) {
+  if (match.join('') === gameArray[gameArray.length - 1]) {
+    playAgain();
+  }
+  return;
+}
+
+function getGuess() {
+  let guess = prompt("Enter a 4-letter word:").toUpperCase().split("");
+  let targetWord = gameArray[gameArray.length - 1].split("");
+  let match = [];
+
+  for (let guessCount = 0; guessCount < guess.length; guessCount++) {
+    for (let currentBoardCount = 0; currentBoardCount < targetWord.length; currentBoardCount++) {
+      if (guess[guessCount] === targetWord[currentBoardCount]) {
+        match.push(guess[guessCount]);
+      } else {
+        match.push(' ')
       }
     }
+  }
+  verifyIfDone(match)
+  printBoard(match)
+}
+
+function printBoard(match) {
+  for (let guessCount = 0; guessCount < match.length; guessCount++) {
+    if (match[guessCount] === " ") {
+      console.log("_");
+    } else {
+      console.log(match[guessCount]);
+    }
+  }
+  getGuess();
+}
+
+// Function
+// for the Birdle game
+function startBirdleGame() {
+  while (playAgain) {
+    const targetWord = wordGenerate();
+    printBoard(targetWord);
   }
 }
 
