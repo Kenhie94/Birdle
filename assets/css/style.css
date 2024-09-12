@@ -1,3 +1,107 @@
-h1 {
-  color: blue;
-}
+ body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background: url('../Images/Backgroundcomic.png') no-repeat center center fixed;
+   background-size: cover;
+   background-color: #f0f8ff, .5;
+   background-attachment: fixed;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+
+ }
+
+ header {
+   background-color: light;
+   padding: 20px;
+   text-align: center;
+   color: white;
+   font-size: 2em;
+   width: 100%;
+ }
+
+ main {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   flex-grow: 1;
+ }
+
+ h1 {
+   font-size: 3em;
+   color: orange;
+   margin-bottom: 20px;
+ }
+
+ p {
+   font-size: 1.2em;
+   color: #666;
+   margin-bottom: 20px;
+ }
+
+ .cta-button {
+   background-color: #F6FB7A;
+   color: black;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1em;
+   cursor: pointer;
+   margin-top: 20px;
+ }
+
+ .cta-button:hover {
+   background-color: white;
+ }
+ 
+ footer {
+   margin-top: 50px;
+   font-size: 0.8em;
+   color: #999;
+ }
+
+ /* Center the image and mb-auto p2 div */
+ .image-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 20px;
+ }
+
+ .mb-auto.p2 {
+   position: relative;
+   background-color: #88D66C;
+   /* Background for speech bubble */
+   padding: 20px;
+   border-radius: 20px;
+   width: 250px;
+   text-align: center;
+   font-size: 1.1em;
+   color: #1E201E;
+   /* Text color */
+   margin-bottom: auto;
+ }
+
+ .mb-auto.p2::after {
+   content: '';
+   position: absolute;
+   bottom: -20px;
+   left: 20%;
+   width: 0;
+   height: 0;
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent;
+   border-top: 20px solid #88D66C;
+   /* Matches the bubble background */
+ }
+
+ img {
+   max-width: 200px;
+   height: auto;
+   margin-bottom: 20px;
+ }
