@@ -32,8 +32,8 @@ const gameArray = []
 // that will return a random word within the wordPool array
 function wordGenerate() {
   const randomIndex = Math.floor(Math.random() * wordPool.length);
-  gameArray.push(wordPool[randomIndex]);
-  const currentSplitWord = wordPool[randomIndex].split('')
+  gameArray.push(wordPool[randomIndex].toUpperCase());
+  const currentSplitWord = wordPool[randomIndex].toUpperCase().split('');
   return currentSplitWord;
 }
 
@@ -51,21 +51,15 @@ function storeLocalStorage(currentWord) {
 
 // Function 
 // for the Birdle game
-// function birdleGame() {
-//   const targetWord = wordPool[Math.floor(Math.random() * wordPool.length)]
-//   const targetSplitWord = targetWord.split('')
-//   let letterChoice = 'abcdefghijklmnopqrstuvwxyz'.split('')
-//   let count = 0;
-//   for(let i = 0; i < targetSplitWord.length; i++) {
-//     const letter = targetSplitWord[i]
-//     if (letterChoice.includes(letter)) {
-//       count++
-//     }
-//   }
-//   console.log(count)
-//   console.log(letterChoice)
-//   console.log(targetWord)
-//   console.log(targetSplitWord)
-// }
+function birdleGame() {
+  const maxAttempts = 5;
+  let attempts = 0;
+  let count = 0;
+  
+  while (attempts < maxAttempts) {
+    let guess = prompt('Enter a 4-letter word:').toUpperCase()
+    
+  }
+}
 
 wordGenerate();
