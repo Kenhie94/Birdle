@@ -13,15 +13,38 @@
     <Title> Welcome to Birdle</Title>
 </head>
 
-<body>
-
-    </head>
-
-    <body>
-
-        <header>
-            Welcome to Birdle
-        </header>
+<body **class="d-flex flex-column min-vh-100"**>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">Birdle Game</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">How to Play</a>
+          </li>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
         <main>
             <div class="image-container">
@@ -36,9 +59,16 @@
 
         </main>
 
-        <footer>
-            &copy; 2024 Birdle. All rights reserved.
-        </footer>
+        <!-- Footer -->
+<footer class="bg-light text-center text-lg-start mt-auto">
+  <div class="container p-4">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Birdle Game. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+      
 
     </body>
 
