@@ -31,10 +31,10 @@ const gameArray = []
 // Function 
 // that will return a random word within the wordPool array
 function wordGenerate() {
-  const currentGame = {}
   const randomIndex = Math.floor(Math.random() * wordPool.length);
-  currentGame.currentWord = wordPool[randomIndex];
-  currentGame.currentSplitWord = currentWord.split('');
+  gameArray.push(wordPool[randomIndex]);
+  const currentSplitWord = wordPool[randomIndex].split('')
+  return currentSplitWord;
 }
 
 // Function 
@@ -51,21 +51,21 @@ function storeLocalStorage(currentWord) {
 
 // Function 
 // for the Birdle game
-function birdleGame() {
-  const targetWord = wordPool[Math.floor(Math.random() * wordPool.length)]
-  const targetSplitWord = targetWord.split('')
-  let letterChoice = 'abcdefghijklmnopqrstuvwxyz'.split('')
-  let count = 0;
-  for(let i = 0; i < targetSplitWord.length; i++) {
-    const letter = targetSplitWord[i]
-    if (letterChoice.includes(letter)) {
-      count++
-    }
-  }
-  console.log(count)
-  console.log(letterChoice)
-  console.log(targetWord)
-  console.log(targetSplitWord)
-}
+// function birdleGame() {
+//   const targetWord = wordPool[Math.floor(Math.random() * wordPool.length)]
+//   const targetSplitWord = targetWord.split('')
+//   let letterChoice = 'abcdefghijklmnopqrstuvwxyz'.split('')
+//   let count = 0;
+//   for(let i = 0; i < targetSplitWord.length; i++) {
+//     const letter = targetSplitWord[i]
+//     if (letterChoice.includes(letter)) {
+//       count++
+//     }
+//   }
+//   console.log(count)
+//   console.log(letterChoice)
+//   console.log(targetWord)
+//   console.log(targetSplitWord)
+// }
 
-birdleGame()
+wordGenerate();
