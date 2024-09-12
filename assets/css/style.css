@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url("../Images/Backgroundcomic.png") no-repeat center center fixed;
+  background: url("../images/Background_comic.png") no-repeat center center fixed;
   background-size: cover;
   background-color: #f0f8ff, 0.5;
   background-attachment: fixed;
