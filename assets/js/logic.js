@@ -18,14 +18,13 @@ function wordGenerate() {
 }
 
 function printBoard(match) {
-  console.log(match);
-  // for (let guessCount = 0; guessCount < match.length; guessCount++) {
-  //   if (match[guessCount] === ' ') {
-  // console.log('_'); print underscore
-  //   } else {
-  // console.log(match[guessCount]); print matched letter
-  //   }
-  // }
+  for (let guessCount = 0; guessCount < match.length; guessCount++) {
+    if (match[guessCount] === " ") {
+      console.log("_");
+    } else {
+      console.log(match[guessCount]);
+    }
+  }
   getGuess();
 }
 
