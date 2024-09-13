@@ -32,34 +32,32 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-            
-            <button id="openModalBtn">About Us</button>
+          <body>
 
-            <div id="myModal1" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>This is a simple modal!</p>
+            <li class="nav-item">
+              <a class="nav-link" href="#">How to Play</a>
+              <button id="howToPlayBtn">How to Play</button>
+          
+              <div id="howToPlayEl" class="modal">
+                  <div class="modal-content custom-class">
+                      <span id="howToPlayClose" class="close">&times;</span> <!-- Unique ID for close button -->
+                      <p>This is the How to Play modal!</p>
+                  </div>
               </div>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#">How to Play</a>
-            <button id="openModalBtn2">How to Play</button>
-
-            <div id="myModal2" class="modal">
-              <div class="modal-content custom-class">
-                <span class="close">&times;</span>
-                <p>This is a simple modal!</p>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Your Stats</a>
-                  <button id="openModalBtn">Your Stats</button>
-      
-                  <div id="myModal" class="modal">
-                    <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <p>This is a simple modal!</p>
+              <a class="nav-link" href="#">Your Stats</a>
+              <button id="statsBtn">Your Stats</button>
+          
+              <div id="statsEl" class="modal">
+                  <div class="modal-content">
+                      <span id="statsClose" class="close">&times;</span> <!-- Unique ID for close button -->
+                      <p>This is the Stats modal!</p>
+                  </div>
               </div>
+          </li>
+          
             </div>
           </li>
         </ul>
