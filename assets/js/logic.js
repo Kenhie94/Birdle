@@ -17,6 +17,8 @@ function wordGenerate() {
   return [' ', ' ', ' ', ' '];
 }
 
+// Function
+// this function 
 function printBoard(match) {
   for (let guessCount = 0; guessCount < match.length; guessCount++) {
     if (match[guessCount] === " ") {
@@ -27,6 +29,7 @@ function printBoard(match) {
   }
   getGuess();
 }
+
 
 function getGuess() {
   let guess = prompt('Enter a 4-letter word:').toUpperCase().split('');
