@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/landing.css" />
 
     <title>Welcome to Birdle</title>
   </head>
@@ -20,28 +21,17 @@
     <!-- navigation header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold text-primary" href="#">Birdle Game</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <a class="navbar-brand fw-bold text-primary" href="./game.html">Birdle Game</a>
+        <div class="navbar-collapse flex-column flex-lg-row">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="./game.html">Play</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Play</a>
+              <a class="nav-link" href="./stats.html">Stats</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">How to Play</a>
+              <a class="nav-link" href="./howto.html">How to Play</a>
             </li>
           </ul>
         </div>
@@ -51,7 +41,7 @@
     <!-- Main content of the page -->
     <main>
       <div class="image-container">
-        <img src="./assets/images/Comic_time_flies_keyboard.png" alt="Bird Image" />
+        <img src="./assets/images/Birdle_Page.jpg" alt="Logo of Birdle" />
         <div class="mb-auto p2">
           <p>Birdle your time away!</p>
           <button class="cta-button">Get Started</button>
@@ -60,15 +50,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-light text-center text-lg-start mt-auto">
-      <div class="container p-4">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2024 Birdle Game. All Rights Reserved.
-        </div>
-      </div>
-    </footer>
+    <div class="container sticky-bottom mt-auto">
+      <footer class="py-1 my-1 mt-auto">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="https://github.com/Magsmags600" class="nav-link px-2 text-body-secondary">Maggie's Github</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/MassiEscalante" class="nav-link px-2 text-body-secondary">Massiel's Github</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/Kenhie94" class="nav-link px-2 text-body-secondary">Kenjy's Github</a>
+          </li>
+        </ul>
+        <ul class="nav justify-content-center">
+          <p class="fs-6">© 2024 Birdle Game. All Rights Reserved.</p>
+        </ul>
+      </footer>
+    </div>
 
+    <!-- Everything below is all javascripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
