@@ -5,8 +5,7 @@ let attempt = 1;
 // Function
 // Starts the Birdle game
 function startBirdleGame() {
-  const targetWord = wordGenerate();
-  printBoard(targetWord);
+  wordGenerate();
 }
 
 // Function
@@ -28,12 +27,18 @@ function printBoard(match) {
     if (match[guessCount] === "_") {
       console.log("_"); // Todo: Change the color of the tile
       colorTileEl.style.backgroundColor = "gray";
+      colorTileEl.style.color = "white";
+      colorTileEl.style.textShadow = "2px 2px 0 black";
     } else if (match[guessCount] === "*") {
       console.log("*"); // Todo: Change the color of the tile
-      colorTileEl.style.backgroundColor = "yellow";
+      colorTileEl.style.backgroundColor = "#F5B751";
+      colorTileEl.style.color ="white";
+      colorTileEl.style.textShadow = "2px 2px 0 black";
     } else {
       console.log(match[guessCount]);
       colorTileEl.style.backgroundColor = "green";
+      colorTileEl.style.color ="white";
+      colorTileEl.style.textShadow = "2px 2px 0 black";
     }
   }
 }
@@ -57,23 +62,21 @@ function getGuess(guess) {
   verifyIfDone(match); // Check if the player has won or lost
   printBoard(match); // Update the visual grid for the current guess
 
-  attempt++
+  attempt++;
 }
 
 // Function
 // Checks the current attempts, if maxAttempt has been reached, game will display that you have lost, and ask to play again. If you guessed the word correctly within the maxAttempt then will display you win and ask to play again.
 function verifyIfDone(match) {
   const maxAttempt = 5;
-  while (attempt < maxAttempt) {
-    if (match.join("") === gameArray[gameArray.length - 1]) {
-      youWin();
-      playAgain();
-    }
-    attempt++;
-    return;
+
+  if (match.join("") === gameArray[gameArray.length - 1]) {
+    youWin(); // The player guessed the correct word
+    playAgain(); // Ask to play again
+  } else if (attempt >= maxAttempt) {
+    youLost(); // The player has run out of attempts
+    playAgain(); // Ask to play again
   }
-  youLost();
-  playAgain();
 }
 
 function youLost() {

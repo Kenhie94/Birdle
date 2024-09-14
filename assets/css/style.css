@@ -17,6 +17,10 @@ p {
   margin-bottom: 20px;
 }
 
+div {
+  font-weight: bolder;
+}
+
 a:hover {
   cursor: pointer;
 }
