@@ -1,11 +1,9 @@
-const colorTileEl = document.querySelector(".grid");
-
 // Empty array to store currentWord objects
 const gameArray = [];
 let attempt = 1;
 
 // Function
-// Starts the Birdle game 
+// Starts the Birdle game
 function startBirdleGame() {
   const targetWord = wordGenerate();
   printBoard(targetWord);
@@ -16,19 +14,26 @@ function startBirdleGame() {
 function wordGenerate() {
   const randomIndex = Math.floor(Math.random() * wordPool.length);
   gameArray.push(wordPool[randomIndex].toUpperCase());
-  return [' ', ' ', ' ', ' '];
+  return [" ", " ", " ", " "];
 }
 
 // Function
 // This function is showing the board for the user to visual what is was correct and what was wrong.
 function printBoard(match) {
+  const gridRow = document.querySelectorAll(`.grid-row`)[attempt - 1];
+  const gridBoxes = gridRow.querySelectorAll(".grid-box");
   for (let guessCount = 0; guessCount < match.length; guessCount++) {
+    let colorTileEl = gridBoxes[guessCount];
+
     if (match[guessCount] === "_") {
       console.log("_"); // Todo: Change the color of the tile
+      colorTileEl.style.backgroundColor = "gray";
     } else if (match[guessCount] === "*") {
       console.log("*"); // Todo: Change the color of the tile
+      colorTileEl.style.backgroundColor = "yellow";
     } else {
       console.log(match[guessCount]);
+      colorTileEl.style.backgroundColor = "green";
     }
   }
 }
@@ -36,7 +41,7 @@ function printBoard(match) {
 // Function
 // This function is getting the users guess for the 4-letter word -> splitting it and then checking the letter with the targetWord letter to check if they match. If it matches, it will reply with the push that index with the letter, * if correct letter but wrong position, _ if letter is not in the word.
 function getGuess(guess) {
-  let targetWord = gameArray[gameArray.length - 1].split('');
+  let targetWord = gameArray[gameArray.length - 1].split("");
   let match = [];
 
   for (let guessCount = 0; guessCount < guess.length; guessCount++) {
@@ -45,12 +50,14 @@ function getGuess(guess) {
     } else if (targetWord.includes(guess[guessCount])) {
       match.push("*"); // Correct letter but wrong position
     } else {
-      match.push("_"); // Letter not in the word // 
+      match.push("_"); // Letter not in the word
     }
   }
 
-  verifyIfDone(match);
-  printBoard(match);
+  verifyIfDone(match); // Check if the player has won or lost
+  printBoard(match); // Update the visual grid for the current guess
+
+  attempt++
 }
 
 // Function
@@ -58,7 +65,7 @@ function getGuess(guess) {
 function verifyIfDone(match) {
   const maxAttempt = 5;
   while (attempt < maxAttempt) {
-    if (match.join('') === gameArray[gameArray.length - 1]) {
+    if (match.join("") === gameArray[gameArray.length - 1]) {
       youWin();
       playAgain();
     }
@@ -70,16 +77,16 @@ function verifyIfDone(match) {
 }
 
 function youLost() {
-  console.log('You Lost!');
+  console.log("You Lost!");
 }
 
 function youWin() {
-  console.log('You Win!');
+  console.log("You Win!");
 }
 
 function playAgain() {
   // startBirdleGame();
-  console.log('endGame');
+  console.log("endGame");
 }
 // Todo: This is where you call the function to update score and statistics
 
