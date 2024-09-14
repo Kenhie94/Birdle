@@ -8,9 +8,13 @@ let currentCol = 0;
 const maxCols = 4;
 const maxRows = 5;
 
-// Function to handle key press (for letter keys)
+// Function to handle key press for letters
 function handleKeyPress(e) {
   const key = e.target.textContent.trim(); // Get the letter pressed
+
+  if (key === "Enter" || key === "Del") {
+    return; // Fixing enter glitch
+  }
 
   
   if (currentCol < maxCols) {
@@ -20,7 +24,7 @@ function handleKeyPress(e) {
   }
 }
 
-// Function to handle the delete button
+// Delete button
 function handleDelete() {
   if (currentCol > 0) {
     currentCol--; 
@@ -29,7 +33,7 @@ function handleDelete() {
   }
 }
 
-// Function to handle the enter button (to move to the next row)
+// Enter button 
 function handleEnter() {
 
   if (currentCol === maxCols) {
@@ -44,13 +48,13 @@ function handleEnter() {
   } 
 }
 
-// Attach event listeners to all letter keys
+//  event listeners to all letter keys
 keys.forEach((key) => {
   key.addEventListener("click", handleKeyPress);
 });
 
-// Attach event listener to the delete button
+//  event listener to the delete button
 document.querySelector(".key-delete").addEventListener("click", handleDelete);
 
-// Attach event listener to the enter button
+//  event listener to the enter button
 document.querySelector(".key-enter").addEventListener("click", handleEnter);
