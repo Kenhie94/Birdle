@@ -56,10 +56,10 @@ button:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 50px);
-  grid-template-rows: repeat(5, 50px);
+  grid-template-rows: repeat(5);
   gap: 10px;
   justify-content: center;
-  margin: 30px auto;
+  margin: 10px auto;
 }
 
 .grid-box {
