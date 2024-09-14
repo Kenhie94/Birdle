@@ -1,3 +1,5 @@
+const colorTileEl = document.querySelector(".grid");
+
 // Empty array to store currentWord objects
 const gameArray = [];
 let attempt = 1;
@@ -21,19 +23,19 @@ function wordGenerate() {
 // This function is showing the board for the user to visual what is was correct and what was wrong.
 function printBoard(match) {
   for (let guessCount = 0; guessCount < match.length; guessCount++) {
-    if (match[guessCount] === " ") {
-      console.log("_");
+    if (match[guessCount] === "_") {
+      console.log("_"); // Todo: Change the color of the tile
+    } else if (match[guessCount] === "*") {
+      console.log("*"); // Todo: Change the color of the tile
     } else {
       console.log(match[guessCount]);
     }
   }
-  getGuess();
 }
 
 // Function
 // This function is getting the users guess for the 4-letter word -> splitting it and then checking the letter with the targetWord letter to check if they match. If it matches, it will reply with the push that index with the letter, * if correct letter but wrong position, _ if letter is not in the word.
-function getGuess() {
-  let guess = prompt('Enter a 4-letter word:').toUpperCase().split('');
+function getGuess(guess) {
   let targetWord = gameArray[gameArray.length - 1].split('');
   let match = [];
 
@@ -43,7 +45,7 @@ function getGuess() {
     } else if (targetWord.includes(guess[guessCount])) {
       match.push("*"); // Correct letter but wrong position
     } else {
-      match.push("_"); // Letter not in the word
+      match.push("_"); // Letter not in the word // 
     }
   }
 
@@ -54,7 +56,7 @@ function getGuess() {
 // Function
 // Checks the current attempts, if maxAttempt has been reached, game will display that you have lost, and ask to play again. If you guessed the word correctly within the maxAttempt then will display you win and ask to play again.
 function verifyIfDone(match) {
-  const maxAttempt = 6;
+  const maxAttempt = 5;
   while (attempt < maxAttempt) {
     if (match.join('') === gameArray[gameArray.length - 1]) {
       youWin();
