@@ -1,57 +1,75 @@
 // Empty array to store currentWord objects
 const gameArray = [];
-let attempt = 1;
+let attempt = 1; // Attempt counter
+let youWinCounter = 0;
+let youLoseCounter = 0;
 
-// Function
-// Starts the Birdle game
+const statsPage = {};
+
+// Function to start the Birdle game
 function startBirdleGame() {
-  wordGenerate();
+  wordGenerate(); // Generate a new word to guess
 }
 
-// Function
-// Will randomly select a word within wordPool array and push it into the global gameArray array
+// Function to randomly select a word within wordPool array and push it into the global gameArray array
 function wordGenerate() {
   const randomIndex = Math.floor(Math.random() * wordPool.length);
   gameArray.push(wordPool[randomIndex].toUpperCase());
-  return [" ", " ", " ", " "];
 }
 
-// Function
-// This function is showing the board for the user to visual what is was correct and what was wrong.
+// Function to reset the game grid and clear all user input
+function resetGrid() {
+  const gridBoxes = document.querySelectorAll(".grid-box");
+
+  // Clear all grid boxes by resetting their content and styles
+  gridBoxes.forEach((box) => {
+    box.textContent = ""; // Clear text content
+    box.style.backgroundColor = ""; // Reset background color
+    box.style.color = ""; // Reset text color
+    box.style.textShadow = ""; // Reset text shadow
+  });
+  currentCol = 0;
+  currentRow = 0;
+  attempt = 0; // Reset attempt counter to start from the first row
+}
+
+// Function to show the board for the user to visualize what was correct and what was wrong
 function printBoard(match) {
+  // Select the current row based on the attempt
+  console.log(attempt);
   const gridRow = document.querySelectorAll(`.grid-row`)[attempt - 1];
   const gridBoxes = gridRow.querySelectorAll(".grid-box");
+  console.log(gridRow);
+  console.log(gridBoxes);
+  // Loop through and apply color changes based on match result
   for (let guessCount = 0; guessCount < match.length; guessCount++) {
+    console.log(guessCount);
     let colorTileEl = gridBoxes[guessCount];
-
     if (match[guessCount] === "_") {
-      console.log("_"); // Todo: Change the color of the tile
       colorTileEl.style.backgroundColor = "gray";
       colorTileEl.style.color = "white";
       colorTileEl.style.textShadow = "2px 2px 0 black";
     } else if (match[guessCount] === "*") {
-      console.log("*"); // Todo: Change the color of the tile
       colorTileEl.style.backgroundColor = "#F5B751";
-      colorTileEl.style.color ="white";
+      colorTileEl.style.color = "white";
       colorTileEl.style.textShadow = "2px 2px 0 black";
     } else {
-      console.log(match[guessCount]);
-      colorTileEl.style.backgroundColor = "green";
-      colorTileEl.style.color ="white";
+      colorTileEl.style.backgroundColor = "#88D66C";
+      colorTileEl.style.color = "white";
       colorTileEl.style.textShadow = "2px 2px 0 black";
     }
   }
 }
 
-// Function
-// This function is getting the users guess for the 4-letter word -> splitting it and then checking the letter with the targetWord letter to check if they match. If it matches, it will reply with the push that index with the letter, * if correct letter but wrong position, _ if letter is not in the word.
+// Function to get the user's guess for the 4-letter word, splitting it, and checking it against the target word
 function getGuess(guess) {
   let targetWord = gameArray[gameArray.length - 1].split("");
   let match = [];
 
+  // Compare the guessed letters with the target word letters
   for (let guessCount = 0; guessCount < guess.length; guessCount++) {
     if (guess[guessCount] === targetWord[guessCount]) {
-      match.push(guess[guessCount]); // Correct letter in the correct position
+      match.push(guess[guessCount]); // Correct letter, correct position
     } else if (targetWord.includes(guess[guessCount])) {
       match.push("*"); // Correct letter but wrong position
     } else {
@@ -59,14 +77,13 @@ function getGuess(guess) {
     }
   }
 
-  verifyIfDone(match); // Check if the player has won or lost
   printBoard(match); // Update the visual grid for the current guess
+  verifyIfDone(match); // Check if the player has won or lost
 
-  attempt++;
+  attempt++; // Move to the next row after the current guess is processed
 }
 
-// Function
-// Checks the current attempts, if maxAttempt has been reached, game will display that you have lost, and ask to play again. If you guessed the word correctly within the maxAttempt then will display you win and ask to play again.
+// Function to check if the player has won or lost, and ask to play again
 function verifyIfDone(match) {
   const maxAttempt = 5;
 
@@ -77,20 +94,55 @@ function verifyIfDone(match) {
     youLost(); // The player has run out of attempts
     playAgain(); // Ask to play again
   }
+  return;
 }
 
-function youLost() {
-  console.log("You Lost!");
-}
-
+// Function called when the player wins
 function youWin() {
+  const showWinText = document.querySelector("#youWin");
+  showWinText.removeAttribute("hidden");
+  const headerTwo = document.createElement("h2");
+  const para = document.createElement("p");
+  headerTwo.innerText = `Congrats! The word was ${gameArray[gameArray.length - 1]}. You win!`;
+  para.innerText = "Play again!";
+  showWinText.appendChild(headerTwo);
+  showWinText.appendChild(para);
+  youWinCounter++;
   console.log("You Win!");
+
+  setTimeout(() => {
+    showWinText.setAttribute("hidden", true);
+    // Optionally remove the content
+    showWinText.innerHTML = "";
+  }, 3000); // 3 seconds
 }
 
+// Function called when the player loses
+function youLost() {
+  const showLoseText = document.querySelector("#youLose");
+  showLoseText.removeAttribute("hidden");
+  const headerTwo = document.createElement("h2");
+  const para = document.createElement("p");
+  headerTwo.innerText = `Oh no, the word was ${gameArray[gameArray.length - 1]}. You Lose!`;
+  para.innerText = "Try Again!";
+  showLoseText.appendChild(headerTwo);
+  showLoseText.appendChild(para);
+  youLoseCounter++;
+  console.log("You Lost!");
+
+  setTimeout(() => {
+    showLoseText.setAttribute("hidden", true);
+    // Optionally remove the content
+    showLoseText.innerHTML = "";
+  }, 3000); // 3 seconds
+}
+
+// Function to ask the player to play again and reset the game state
 function playAgain() {
-  // startBirdleGame();
-  console.log("endGame");
+  resetGrid(); // Reset the grid and visual elements
+  // gameArray = []; // Clear the old game word
+  startBirdleGame(); // Start a new game with a new word
 }
-// Todo: This is where you call the function to update score and statistics
 
+// Start the game for the first time
 startBirdleGame();
