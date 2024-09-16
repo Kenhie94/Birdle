@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/landing.css" />
+    <link rel="stylesheet" href="./assets/css/modal.css" />
 
     <title>Welcome to Birdle</title>
   </head>
@@ -28,15 +29,85 @@
               <a class="nav-link" aria-current="page" href="./game.html">Play</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./stats.html">Stats</a>
+              <a class="nav-link" id="statsBtn">Stats</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./howto.html">How to Play</a>
+              <a class="nav-link" id="howToPlayBtn" >How to Play</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+    
+    <div id="howToPlayEl" class="modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4;">
+          <span id="howToPlayClose" class="close"
+            style="font-family: 'Comic Sans MS', cursive, sans-serif;">&times;</span>
+  
+          <!-- Card with How To Play Information -->
+          <div class="card"
+            style="width: 25rem  25rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: aqua;">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: 'Comic Sans MS', cursive, sans-serif;">How To Play</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"
+                style="font-family: 'Comic Sans MS', cursive, sans-serif;">Game Instructions</h6>
+  
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
+                Guess a four (4) letter word in five (5) tries. The color of the tiles will change to show how close your
+                guess was to the word.
+              </p>
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Examples:</p>
+  
+              <!-- Example with Image 1 -->
+              <img src="assets/images/placeholder1.png"
+                alt="Correct letter in correct spot. Field with correct letter will be green." class="img-fluid mb-2" />
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">"W" is in the word and in
+                the correct spot.</p>
+  
+              <!-- Example with Image 2 -->
+              <img src="assets/images/placeholder2.png"
+                alt="Correct letter in wrong spot. Field with correct letter and wrong spot will be yellow."
+                class="img-fluid mb-2" />
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">"I" is in the word but in
+                the wrong spot.</p>
+  
+              <!-- Example with Image 3 -->
+              <img src="assets/images/placeholder3.png" alt="Wrong letter. Field with wrong letter will be grey."
+                class="img-fluid mb-2" />
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">"U" is not in the word in
+                any spot.</p>
+  
+              <!-- Example Links (if needed) -->
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+        <div id="statsEl" class="modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4;">
+          <span id="statsClose" class="close" style="font-family: 'Comic Sans MS', cursive, sans-serif;">&times;</span>
+
+          <!-- Card with Stats Information -->
+          <div class="card" style="width: 25rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: aqua;">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Game Stats</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Your Statistics</h6>
+
+              <!-- Stats details can be added dynamically -->
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Games Played: 10</p>
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Games Won: 8</p>
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Win Percentage: 80%</p>
+              <!-- Add more stats as necessary -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <!-- Main content of the page -->
     <main>
@@ -85,5 +156,7 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/modal.js"></script>
+   
   </body>
 </html>
