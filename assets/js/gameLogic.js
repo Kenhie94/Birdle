@@ -88,8 +88,14 @@ function youWin() {
 }
 
 function playAgain() {
-  // startBirdleGame();
-  console.log("endGame");
+  const gameYes = confirm('Play again?')
+
+  if (gameYes === true) {
+    attempt = 1
+    startBirdleGame();
+  } else {
+    console.log('Not playing again')
+  }
 }
 // Todo: This is where you call the function to update score and statistics
 
