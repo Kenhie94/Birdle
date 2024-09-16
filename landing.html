@@ -5,14 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <!-- prettier-ignore -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/landing.css" />
+    <link rel="stylesheet" href="./assets/css/modal.css" />
 
     <title>Welcome to Birdle</title>
   </head>
@@ -31,20 +28,53 @@
               <a class="nav-link" href="./stats.html">STATS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./howto.html">HOW TO PLAY</a>
+              <a class="nav-link" id="howToPlayBtn">HOW TO PLAY</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <div id="howToPlayEl" class="modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4">
+          <span id="howToPlayClose" class="close">&times;</span>
+
+          <!-- Card with How To Play Information -->
+          <div class="card" style="width: 25rem 25rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: aqua">
+            <div class="card-body">
+              <h5 class="card-title">How To Play</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Game Instructions</h6>
+
+              <p class="card-text">Guess a four (4) letter word in five (5) tries. The color of the tiles will change to show how close your guess was to the word.</p>
+              <p class="card-text">Examples:</p>
+
+              <!-- Example with Image 1 -->
+              <img src="assets/images/placeholder1.png" alt="Correct letter in correct spot. Field with correct letter will be green." class="img-fluid mb-2" />
+              <p class="card-text">"W" is in the word and in the correct spot.</p>
+
+              <!-- Example with Image 2 -->
+              <img src="assets/images/placeholder2.png" alt="Correct letter in wrong spot. Field with correct letter and wrong spot will be yellow." class="img-fluid mb-2" />
+              <p class="card-text">"I" is in the word but in the wrong spot.</p>
+
+              <!-- Example with Image 3 -->
+              <img src="assets/images/placeholder3.png" alt="Wrong letter. Field with wrong letter will be grey." class="img-fluid mb-2" />
+              <p class="card-text">"U" is not in the word in any spot.</p>
+
+              <!-- Example Links (if needed) -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Main content of the page -->
     <main>
       <div class="image-container">
-        <img src="./assets/images/Birdle_Page.jpg" alt="Logo of Birdle" />
-        <div class="mb-auto p2">
-          <p>Birdle your time away!</p>
-          <button class="cta-button">Get Started</button>
+        <img src="./assets/images/Birdle_Page_2.jpg" alt="Logo of Birdle" />
+        <div class="p2">
+          <h3>Birdle your time away!</h3>
+          <button type="button" class="btn btn-outline-success btn-lg m-2" onclick="location.href='./game.html';" value="Go to game page">Get Started</button>
         </div>
       </div>
     </main>
@@ -70,6 +100,7 @@
     </div>
 
     <!-- Everything below is all javascripts -->
+    <script src="./assets/js/modal.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

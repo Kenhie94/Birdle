@@ -1,6 +1,12 @@
 // Empty array to store currentWord objects
 const gameArray = [];
 let attempt = 1; // Attempt counter
+let youWinCounter = 0;
+let youLoseCounter = 0;
+
+const statsPage = {
+  
+}
 
 // Function to start the Birdle game
 function startBirdleGame() {
@@ -50,7 +56,7 @@ function printBoard(match) {
       colorTileEl.style.color = "white";
       colorTileEl.style.textShadow = "2px 2px 0 black";
     } else {
-      colorTileEl.style.backgroundColor = "green";
+      colorTileEl.style.backgroundColor = "#88D66C";
       colorTileEl.style.color = "white";
       colorTileEl.style.textShadow = "2px 2px 0 black";
     }
@@ -95,6 +101,9 @@ function verifyIfDone(match) {
 
 // Function called when the player wins
 function youWin() {
+  const showWinText = document.querySelector('#youWin');
+  showWinText.removeAttribute('hidden')
+  youWinCounter++;
   console.log("You Win!");
 }
 

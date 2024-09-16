@@ -36,9 +36,12 @@
         </div>
       </div>
     </nav>
-
     <!-- Placeholder div to simulate more content -->
     <div class="mt-auto">
+      <div id="youWin" class="text-center mb-5" hidden>
+        <h2>Congrats! You Win!</h2>
+        <button onclick="playAgain()">Play Again?</button>
+      </div>
       <div class="mt-auto">
         <!-- Grouping each attempt inside its own div -->
         <div class="grid-row attemptOne grid">
@@ -47,28 +50,28 @@
           <div class="grid-box attemptOne"></div>
           <div class="grid-box attemptOne"></div>
         </div>
-    
+
         <div class="grid-row attemptTwo grid">
           <div class="grid-box attemptTwo"></div>
           <div class="grid-box attemptTwo"></div>
           <div class="grid-box attemptTwo"></div>
           <div class="grid-box attemptTwo"></div>
         </div>
-    
+
         <div class="grid-row attemptThree grid">
           <div class="grid-box attemptThree"></div>
           <div class="grid-box attemptThree"></div>
           <div class="grid-box attemptThree"></div>
           <div class="grid-box attemptThree"></div>
         </div>
-    
+
         <div class="grid-row attemptFour grid">
           <div class="grid-box attemptFour"></div>
           <div class="grid-box attemptFour"></div>
           <div class="grid-box attemptFour"></div>
           <div class="grid-box attemptFour"></div>
         </div>
-    
+
         <div class="grid-row attemptFive grid">
           <div class="grid-box attemptFive"></div>
           <div class="grid-box attemptFive"></div>
@@ -78,47 +81,47 @@
       </div>
     </div>
 
-      <!-- Keyboard Layout -->
-      <div class="keyboard">
-        <!-- First row of keys -->
-        <div class="keyboard-row">
-          <button class="key">Q</button>
-          <button class="key">W</button>
-          <button class="key">E</button>
-          <button class="key">R</button>
-          <button class="key">T</button>
-          <button class="key">Y</button>
-          <button class="key">U</button>
-          <button class="key">I</button>
-          <button class="key">O</button>
-          <button class="key">P</button>
-        </div>
-        <!-- Second row of keys -->
-        <div class="keyboard-row">
-          <button class="key">A</button>
-          <button class="key">S</button>
-          <button class="key">D</button>
-          <button class="key">F</button>
-          <button class="key">G</button>
-          <button class="key">H</button>
-          <button class="key">J</button>
-          <button class="key">K</button>
-          <button class="key">L</button>
-        </div>
-        <!-- Third row of keys -->
-        <div class="keyboard-row">
-          <button class="key key-enter">Enter</button>
-          <button class="key">Z</button>
-          <button class="key">X</button>
-          <button class="key">C</button>
-          <button class="key">V</button>
-          <button class="key">B</button>
-          <button class="key">N</button>
-          <button class="key">M</button>
-          <button class="key key-delete">Del</button>
-        </div>
+    <!-- Keyboard Layout -->
+    <div class="keyboard">
+      <!-- First row of keys -->
+      <div class="keyboard-row">
+        <button class="key">Q</button>
+        <button class="key">W</button>
+        <button class="key">E</button>
+        <button class="key">R</button>
+        <button class="key">T</button>
+        <button class="key">Y</button>
+        <button class="key">U</button>
+        <button class="key">I</button>
+        <button class="key">O</button>
+        <button class="key">P</button>
+      </div>
+      <!-- Second row of keys -->
+      <div class="keyboard-row">
+        <button class="key">A</button>
+        <button class="key">S</button>
+        <button class="key">D</button>
+        <button class="key">F</button>
+        <button class="key">G</button>
+        <button class="key">H</button>
+        <button class="key">J</button>
+        <button class="key">K</button>
+        <button class="key">L</button>
+      </div>
+      <!-- Third row of keys -->
+      <div class="keyboard-row">
+        <button class="key key-enter">Enter</button>
+        <button class="key">Z</button>
+        <button class="key">X</button>
+        <button class="key">C</button>
+        <button class="key">V</button>
+        <button class="key">B</button>
+        <button class="key">N</button>
+        <button class="key">M</button>
+        <button class="key key-delete">Del</button>
       </div>
     </div>
+
     <!-- Footer -->
     <div class="container sticky-bottom mt-auto">
       <footer class="py-1 my-1 mt-auto">
