@@ -1,10 +1,16 @@
 // Empty array to store currentWord objects
 const gameArray = [];
 let attempt = 1; // Attempt counter
-let youWinCounter = 0;
-let youLoseCounter = 0;
 
-const statsPage = {};
+function initializeGameStats() {
+  const statsPage = {
+    roundWordList: gameArray.value,
+    youWinCounter: 0,
+    youLoseCounter: 0,
+  };
+
+  localStorage.setItem("statsPage", JSON.stringify(statsPage));
+}
 
 // Function to start the Birdle game
 function startBirdleGame() {
@@ -97,8 +103,20 @@ function verifyIfDone(match) {
   return;
 }
 
+function updateGameStats(isWin) {
+  const statsPage = JSON.parse(localStorage.getItem("statsPage"));
+
+  if (isWin) {
+    statsPage.youWinCounter++;
+  } else {
+    statsPage.youLoseCounter++;
+  }
+}
+
 // Function called when the player wins
 function youWin() {
+  const statsPage = JSON.parse(localStorage.getItem("statsPage"));
+
   const showWinText = document.querySelector("#youWin");
   showWinText.removeAttribute("hidden");
   const headerTwo = document.createElement("h2");
@@ -107,7 +125,7 @@ function youWin() {
   para.innerText = "Play again!";
   showWinText.appendChild(headerTwo);
   showWinText.appendChild(para);
-  youWinCounter++;
+  statsPage.youWinCounter++
   console.log("You Win!");
 
   setTimeout(() => {
@@ -119,6 +137,8 @@ function youWin() {
 
 // Function called when the player loses
 function youLost() {
+  const statsPage = JSON.parse(localStorage.getItem("statsPage"));
+
   const showLoseText = document.querySelector("#youLose");
   showLoseText.removeAttribute("hidden");
   const headerTwo = document.createElement("h2");
@@ -127,7 +147,7 @@ function youLost() {
   para.innerText = "Try Again!";
   showLoseText.appendChild(headerTwo);
   showLoseText.appendChild(para);
-  youLoseCounter++;
+  statsPage.youLoseCounter++
   console.log("You Lost!");
 
   setTimeout(() => {
@@ -145,4 +165,5 @@ function playAgain() {
 }
 
 // Start the game for the first time
+initializeGameStats();
 startBirdleGame();
