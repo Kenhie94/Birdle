@@ -4,9 +4,7 @@ let attempt = 1; // Attempt counter
 let youWinCounter = 0;
 let youLoseCounter = 0;
 
-const statsPage = {
-  
-}
+const statsPage = {};
 
 // Function to start the Birdle game
 function startBirdleGame() {
@@ -38,14 +36,14 @@ function resetGrid() {
 // Function to show the board for the user to visualize what was correct and what was wrong
 function printBoard(match) {
   // Select the current row based on the attempt
-  console.log(attempt)
+  console.log(attempt);
   const gridRow = document.querySelectorAll(`.grid-row`)[attempt - 1];
   const gridBoxes = gridRow.querySelectorAll(".grid-box");
-  console.log(gridRow)
-  console.log(gridBoxes)
+  console.log(gridRow);
+  console.log(gridBoxes);
   // Loop through and apply color changes based on match result
   for (let guessCount = 0; guessCount < match.length; guessCount++) {
-    console.log(guessCount)
+    console.log(guessCount);
     let colorTileEl = gridBoxes[guessCount];
     if (match[guessCount] === "_") {
       colorTileEl.style.backgroundColor = "gray";
@@ -101,15 +99,42 @@ function verifyIfDone(match) {
 
 // Function called when the player wins
 function youWin() {
-  const showWinText = document.querySelector('#youWin');
-  showWinText.removeAttribute('hidden')
+  const showWinText = document.querySelector("#youWin");
+  showWinText.removeAttribute("hidden");
+  const headerTwo = document.createElement("h2");
+  const para = document.createElement("p");
+  headerTwo.innerText = `Congrats! The word was ${gameArray[gameArray.length - 1]}. You win!`;
+  para.innerText = "Play again!";
+  showWinText.appendChild(headerTwo);
+  showWinText.appendChild(para);
   youWinCounter++;
   console.log("You Win!");
+
+  setTimeout(() => {
+    showWinText.setAttribute("hidden", true);
+    // Optionally remove the content
+    showWinText.innerHTML = "";
+  }, 3000); // 3 seconds
 }
 
 // Function called when the player loses
 function youLost() {
+  const showLoseText = document.querySelector("#youLose");
+  showLoseText.removeAttribute("hidden");
+  const headerTwo = document.createElement("h2");
+  const para = document.createElement("p");
+  headerTwo.innerText = `Oh no, the word was ${gameArray[gameArray.length - 1]}. You Lose!`;
+  para.innerText = "Try Again!";
+  showLoseText.appendChild(headerTwo);
+  showLoseText.appendChild(para);
+  youLoseCounter++;
   console.log("You Lost!");
+
+  setTimeout(() => {
+    showLoseText.setAttribute("hidden", true);
+    // Optionally remove the content
+    showLoseText.innerHTML = "";
+  }, 3000); // 3 seconds
 }
 
 // Function to ask the player to play again and reset the game state
