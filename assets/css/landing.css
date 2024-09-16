@@ -1,12 +1,12 @@
 .cta-button {
   background-color: #f6fb7a;
   color: black;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: none;
   border-radius: 5px;
   font-size: 1em;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .cta-button:hover {
@@ -18,16 +18,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.mb-auto.p2 {
+.p2 {
   position: relative;
   background-color: #88d66c;
   /* Background for speech bubble */
   padding: 20px;
   border-radius: 20px;
-  width: 250px;
+  width: 400px;
   text-align: center;
   font-size: 1.1em;
   color: #1e201e;
@@ -35,7 +35,7 @@
   margin-bottom: auto;
 }
 
-.mb-auto.p2::after {
+.p2::after {
   content: "";
   position: absolute;
   bottom: -20px;
@@ -49,7 +49,7 @@
 }
 
 img {
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
   margin-bottom: 20px;
 }

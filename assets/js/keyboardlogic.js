@@ -23,7 +23,7 @@ function handleKeyPress(e) {
     if (currentCol < maxCols) {
       const currentIndex = currentRow * maxCols + currentCol;
       gridBoxes[currentIndex].textContent = key; // Display the letter
-
+      console.log(currentIndex)
       userGuessArray.push(key); // Pushes the last key into the array
       currentCol++; // Move to the next column
     }
@@ -43,11 +43,10 @@ function handleDelete() {
 function handleEnter() {
   if (currentCol === maxCols) {
     const currentGuessArray = [...userGuessArray]
-    getGuess(currentGuessArray)
     userGuessArray= []; // Reset the array
     currentRow++; // Move to the next row
     currentCol = 0; // Reset to the first column of the new row
-
+    getGuess(currentGuessArray)
     // Prevent moving past the last row
     if (currentRow >= maxRows) {
       currentRow = maxRows - 1;
