@@ -14,6 +14,9 @@ We wanted to build a game and decided on the inspiration of Wordle.
 
 Click on the link to play the game. No downloads needed. 
 
+Game: https://kenhie94.github.io/Birdle/
+Repo: https://github.com/Kenhie94/Birdle
+
 # Usage
 
 ![alt text](assets\images\Birdle_Page_2.jpg)
