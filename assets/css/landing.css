@@ -23,14 +23,14 @@
 
 .p2 {
   position: relative;
-  background-color: #88d66c;
+  background-color: #0969a1;
   /* Background for speech bubble */
   padding: 20px;
   border-radius: 20px;
   width: 400px;
   text-align: center;
   font-size: 1.1em;
-  color: #1e201e;
+  color: white;
   /* Text color */
   margin-bottom: auto;
 }
@@ -44,7 +44,7 @@
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 20px solid #88d66c;
+  border-top: 20px solid #0969a1;
   /* Matches the bubble background */
 }
 
