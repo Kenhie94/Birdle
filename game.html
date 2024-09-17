@@ -26,14 +26,14 @@
         <div class="navbar-collapse flex-column flex-lg-row">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./game.html">Play</a>
+              <a class="nav-link" aria-current="page" href="./game.html">PLAY</a>
             
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="statsBtn">Stats</a>
+              <a class="nav-link" id="statsBtn">STATS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="howToPlayBtn">How to Play</a>
+              <a class="nav-link" id="howToPlayBtn">HOW TO PLAY</a>
             </li>
           </ul>
         </div>
@@ -52,13 +52,13 @@
               <p>Guess a four (4) letter word in five (5) tries. The color of the tiles will change to show how close your guess was to the word.</p>
               <p>Examples:</p>
               <img src="assets/images/Rootgreen.jpg" alt="Correct letter in correct spot. Field with correct letter will be green." class="img-fluid mb-2" />
-              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif">"T" is in the word and in the correct spot.</p>
+              <p class="card-text">"T" is in the word and in the correct spot.</p>
               <!-- Example with Image 2 -->
               <img src="assets/images/PureYellow.jpg" alt="Correct letter in wrong spot. Field with correct letter and wrong spot will be yellow." class="img-fluid mb-2" />
-              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif">"U" is in the word but in the wrong spot.</p>
+              <p class="card-text">"U" is in the word but in the wrong spot.</p>
               <!-- Example with Image 3 -->
               <img src="assets/images/WordGrey.jpg" alt="Wrong letter. Field with wrong letter will be grey." class="img-fluid mb-2" />
-              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif">"WORD" has no correct letters in any spot.</p>
+              <p class="card-text">"WORD" has no correct letters in any spot.</p>
             </div>
           </div>
         </div>
@@ -73,10 +73,12 @@
           <div class="card" style="width: 40rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: rgb(237, 233, 226);">
             <div class="card-body">
               <h5 class="card-title">Game Stats</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Your Statistics</h6>
-              <p>Games Played: 10</p>
-              <p>Games Won: 8</p>
-              <p>Win Percentage: 80%</p>
+
+              <!-- Stats details can be added dynamically -->
+              <p class="card-text" id="gamesPlayed">Games Played: 0</p>
+              <p class="card-text" id="gamesWon">Games Won: 0</p>
+              <p class="card-text" id="gamesLost">Games Lost: 0</p>
+              <p class="card-text" id="winPercentage">Win Percentage: 0%</p>
             </div>
           </div>
         </div>

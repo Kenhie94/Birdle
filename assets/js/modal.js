@@ -8,24 +8,26 @@ const statsEl = document.getElementById("statsEl");
 const statsBtn = document.getElementById("statsBtn");
 const statsClose = document.getElementById("statsClose"); // Unique ID for close button
 
-// Open the How to Play modal
-howToPlayBtn.onclick = function() {
-    howToPlayEl.style.display = "block";
-}
+howToPlayBtn.addEventListener("click", function() {
+  statsEl.style.display = "none"
+
+  howToPlayEl.style.display = "block"
+});
+
+statsBtn.addEventListener("click", function() {
+  howToPlayEl.style.display = "none"
+
+  statsEl.style.display = "block"
+})
 
 // Close the How to Play modal
 howToPlayClose.onclick = function() {
     howToPlayEl.style.display = "none";
 }
 
-// Open the Stats modal
-statsBtn.onclick = function() {
-    statsEl.style.display = "block";
-}
-
 // Close the Stats modal
 statsClose.onclick = function() {
-    statsEl.style.display = "none";
+  statsEl.style.display = "none";
 }
 
 // Close modals when the user clicks outside of them

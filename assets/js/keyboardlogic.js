@@ -23,7 +23,6 @@ function handleKeyPress(e) {
     if (currentCol < maxCols) {
       const currentIndex = currentRow * maxCols + currentCol;
       gridBoxes[currentIndex].textContent = key; // Display the letter
-      console.log(currentIndex)
       userGuessArray.push(key); // Pushes the last key into the array
       currentCol++; // Move to the next column
     }

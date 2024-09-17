@@ -1,4 +1,5 @@
 /* The Modal (background) */
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -32,6 +33,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
 #howToPlayEl, #statsEl {
-    z-index: 9999;
-  }
+  z-index: 9999;
+}
