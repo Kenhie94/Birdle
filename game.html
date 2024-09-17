@@ -26,14 +26,14 @@
         <div class="navbar-collapse flex-column flex-lg-row">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="./game.html">Play</a>
+              <a class="nav-link" aria-current="page" href="./game.html">PLAY</a>
             
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="statsBtn">Stats</a>
+              <a class="nav-link" id="statsBtn">STATS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="howToPlayBtn">How to Play</a>
+              <a class="nav-link" id="howToPlayBtn">HOW TO PLAY</a>
             </li>
           </ul>
         </div>
@@ -43,20 +43,22 @@
         <!-- HIGHLIGHTED SECTION: How to Play Modal (from landing page) -->
     <div id="howToPlayEl" class="modal">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 50rem;">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 70rem">
           <span id="howToPlayClose" class="close">&times;</span>
-          <div class="card" style="width: 35rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: aqua;">
+          <div class="card" style="width: 50rem; margin: auto; padding: 40px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: rgb(237, 233, 226);">
             <div class="card-body">
               <h5 class="card-title">How To Play</h5>
               <h6 class="card-subtitle mb-2 text-body-secondary">Game Instructions</h6>
               <p>Guess a four (4) letter word in five (5) tries. The color of the tiles will change to show how close your guess was to the word.</p>
               <p>Examples:</p>
-              <img src="assets/images/placeholder1.png" alt="Correct letter in correct spot" class="img-fluid mb-2" />
-              <p>"W" is in the word and in the correct spot.</p>
-              <img src="assets/images/placeholder2.png" alt="Correct letter in wrong spot" class="img-fluid mb-2" />
-              <p>"I" is in the word but in the wrong spot.</p>
-              <img src="assets/images/placeholder3.png" alt="Wrong letter" class="img-fluid mb-2" />
-              <p>"U" is not in the word in any spot.</p>
+              <img src="assets/images/Rootgreen.jpg" alt="Correct letter in correct spot. Field with correct letter will be green." class="img-fluid mb-2" />
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif">"T" is in the word and in the correct spot.</p>
+              <!-- Example with Image 2 -->
+              <img src="assets/images/PureYellow.jpg" alt="Correct letter in wrong spot. Field with correct letter and wrong spot will be yellow." class="img-fluid mb-2" />
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif">"U" is in the word but in the wrong spot.</p>
+              <!-- Example with Image 3 -->
+              <img src="assets/images/WordGrey.jpg" alt="Wrong letter. Field with wrong letter will be grey." class="img-fluid mb-2" />
+              <p class="card-text" style="font-family: 'Comic Sans MS', cursive, sans-serif">"WORD" has no correct letters in any spot.</p>
             </div>
           </div>
         </div>
@@ -66,9 +68,9 @@
     <!-- HIGHLIGHTED SECTION: Stats Modal (from landing page) -->
     <div id="statsEl" class="modal">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content custom-class" style="background-color: #f6f3e4;">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 50rem">
           <span id="statsClose" class="close">&times;</span>
-          <div class="card" style="width: 25rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: aqua;">
+          <div class="card" style="width: 40rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: rgb(237, 233, 226);">
             <div class="card-body">
               <h5 class="card-title">Game Stats</h5>
               <h6 class="card-subtitle mb-2 text-body-secondary">Your Statistics</h6>
