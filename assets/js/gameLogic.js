@@ -156,6 +156,23 @@ function playAgain() {
   startBirdleGame(); // Start a new game with a new word
 }
 
+function updateStats() {
+  const statsPage = JSON.parse(localStorage.getItem("statsPage"));
+  const gamesPlayed = statsPage.youWinCounter + statsPage.youLoseCounter;
+  const winPercentage = gamesPlayed > 0 ? Math.round((statsPage.youWinCounter / gamesPlayed) * 100) : 0;
+
+  document.getElementById("gamesPlayed").textContent = `Games Played: ${gamesPlayed}`;
+  document.getElementById("gamesWon").textContent = `Games Won: ${statsPage.youWinCounter}`;
+  document.getElementById("gamesLost").textContent = `Games Lost: ${statsPage.youLoseCounter}`;
+  document.getElementById("winPercentage").textContent = `Win Percentage: ${winPercentage}%`;
+}
+
+statsBtn.addEventListener("click", function () {
+  howToPlayEl.style.display = "none";
+  statsEl.style.display = "block";
+  updateStats();
+});
+
 // Start the game for the first time
 initializeGameStats();
 startBirdleGame();
