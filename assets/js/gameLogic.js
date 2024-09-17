@@ -3,13 +3,14 @@ const gameArray = [];
 let attempt = 1; // Attempt counter
 
 function initializeGameStats() {
-  const statsPage = {
-    roundWordList: gameArray.value,
-    youWinCounter: 0,
-    youLoseCounter: 0,
-  };
-
-  localStorage.setItem("statsPage", JSON.stringify(statsPage));
+  const statsPage = localStorage.getItem("statsPage");
+  if (!statsPage) {
+    const statsPage = {
+      youWinCounter: 0,
+      youLoseCounter: 0,
+    };
+    localStorage.setItem("statsPage", JSON.stringify(statsPage));
+  }
 }
 
 // Function to start the Birdle game
@@ -42,14 +43,10 @@ function resetGrid() {
 // Function to show the board for the user to visualize what was correct and what was wrong
 function printBoard(match) {
   // Select the current row based on the attempt
-  console.log(attempt);
   const gridRow = document.querySelectorAll(`.grid-row`)[attempt - 1];
   const gridBoxes = gridRow.querySelectorAll(".grid-box");
-  console.log(gridRow);
-  console.log(gridBoxes);
   // Loop through and apply color changes based on match result
   for (let guessCount = 0; guessCount < match.length; guessCount++) {
-    console.log(guessCount);
     let colorTileEl = gridBoxes[guessCount];
     if (match[guessCount] === "_") {
       colorTileEl.style.backgroundColor = "gray";
@@ -103,19 +100,13 @@ function verifyIfDone(match) {
   return;
 }
 
-function updateGameStats(isWin) {
-  const statsPage = JSON.parse(localStorage.getItem("statsPage"));
-
-  if (isWin) {
-    statsPage.youWinCounter++;
-  } else {
-    statsPage.youLoseCounter++;
-  }
-}
-
 // Function called when the player wins
 function youWin() {
   const statsPage = JSON.parse(localStorage.getItem("statsPage"));
+
+  statsPage.youWinCounter++;
+
+  localStorage.setItem("statsPage", JSON.stringify(statsPage));
 
   const showWinText = document.querySelector("#youWin");
   showWinText.removeAttribute("hidden");
@@ -125,19 +116,21 @@ function youWin() {
   para.innerText = "Play again!";
   showWinText.appendChild(headerTwo);
   showWinText.appendChild(para);
-  statsPage.youWinCounter++
-  console.log("You Win!");
 
   setTimeout(() => {
     showWinText.setAttribute("hidden", true);
     // Optionally remove the content
     showWinText.innerHTML = "";
-  }, 3000); // 3 seconds
+  }, 4000); // 4 seconds
 }
 
 // Function called when the player loses
 function youLost() {
   const statsPage = JSON.parse(localStorage.getItem("statsPage"));
+
+  statsPage.youLoseCounter++;
+
+  localStorage.setItem("statsPage", JSON.stringify(statsPage));
 
   const showLoseText = document.querySelector("#youLose");
   showLoseText.removeAttribute("hidden");
@@ -147,14 +140,13 @@ function youLost() {
   para.innerText = "Try Again!";
   showLoseText.appendChild(headerTwo);
   showLoseText.appendChild(para);
-  statsPage.youLoseCounter++
-  console.log("You Lost!");
+  statsPage.youLoseCounter++;
 
   setTimeout(() => {
     showLoseText.setAttribute("hidden", true);
     // Optionally remove the content
     showLoseText.innerHTML = "";
-  }, 3000); // 3 seconds
+  }, 4000); // 4 seconds
 }
 
 // Function to ask the player to play again and reset the game state
