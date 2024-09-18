@@ -29,7 +29,7 @@ function handleKeyPress(e) {
   }
 }
 
-// Delete button
+// Function to handle delete button
 function handleDelete() {
   if (currentCol > 0) {
     currentCol--;
@@ -38,7 +38,7 @@ function handleDelete() {
   }
 }
 
-// Enter button
+// Function to handle enter button
 function handleEnter() {
   if (currentCol === maxCols) {
     const currentGuessArray = [...userGuessArray]
@@ -53,7 +53,7 @@ function handleEnter() {
   }
 }
 
-//  event listeners to all letter keys
+//  Even listener for all the keys on the keyboard
 keys.forEach((key) => {
   key.addEventListener("click", handleKeyPress);
 });

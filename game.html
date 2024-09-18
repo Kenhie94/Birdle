@@ -20,7 +20,7 @@
     <!-- Navigation Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
       <div class="container">
-        <img src="./assets/images/Birdle_Page.jpg" class="px-2" alt="Logo of Birdle" />
+        <a href="./game.html"><img src="./assets/images/Birdle_Page.jpg" class="px-2" alt="Logo of Birdle" /></a>
         <a class="navbar-brand fw-bold text-primary" href="./game.html">BIRDLE</a>
         <div class="navbar-collapse flex-column flex-lg-row">
           <ul class="navbar-nav ms-auto">
@@ -37,13 +37,30 @@
         </div>
       </div>
     </nav>
-
-    <!-- HIGHLIGHTED SECTION: How to Play Modal (from landing page) -->
+    <!-- Stats Modal -->
+    <div id="statsEl" class="modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 50rem">
+          <span id="statsClose" class="close">&times;</span>
+          <div class="card" style="width: 40rem; margin: auto; padding: 10px;; background-color: rgb(237, 233, 226)">
+            <div class="card-body">
+              <h5 class="card-title">Game Stats</h5>
+              <!-- Stats details can be added dynamically -->
+              <p class="card-text" id="gamesPlayed">Games Played: 0</p>
+              <p class="card-text" id="gamesWon">Games Won: 0</p>
+              <p class="card-text" id="gamesLost">Games Lost: 0</p>
+              <p class="card-text" id="winPercentage">Win Percentage: 0%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- How to Play Modal -->
     <div id="howToPlayEl" class="modal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 70rem">
           <span id="howToPlayClose" class="close">&times;</span>
-          <div class="card" style="width: 50rem; margin: auto; padding: 40px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: rgb(237, 233, 226)">
+          <div class="card" style="width: 50rem; margin: auto; padding: 40px;; background-color: rgb(237, 233, 226)">
             <div class="card-body">
               <h5 class="card-title">How To Play</h5>
               <h6 class="card-subtitle mb-2 text-body-secondary">Game Instructions</h6>
@@ -57,26 +74,6 @@
               <!-- Example with Image 3 -->
               <img src="assets/images/WordGrey.jpg" alt="Wrong letter. Field with wrong letter will be grey." class="img-fluid mb-2" />
               <p class="card-text">"WORD" has no correct letters in any spot.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HIGHLIGHTED SECTION: Stats Modal (from landing page) -->
-    <div id="statsEl" class="modal">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 50rem">
-          <span id="statsClose" class="close">&times;</span>
-          <div class="card" style="width: 40rem; margin: auto; padding: 10px; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: rgb(237, 233, 226)">
-            <div class="card-body">
-              <h5 class="card-title">Game Stats</h5>
-
-              <!-- Stats details can be added dynamically -->
-              <p class="card-text" id="gamesPlayed">Games Played: 0</p>
-              <p class="card-text" id="gamesWon">Games Won: 0</p>
-              <p class="card-text" id="gamesLost">Games Lost: 0</p>
-              <p class="card-text" id="winPercentage">Win Percentage: 0%</p>
             </div>
           </div>
         </div>
@@ -191,7 +188,8 @@
       </footer>
     </div>
 
-    <script src="./assets/js/keyboardlogic.js"></script>
+    <!-- Everything below is all javascripts -->
+    <script src="./assets/js/keyboardLogic.js"></script>
     <script src="./assets/js/wordPool.js"></script>
     <script src="./assets/js/gameLogic.js"></script>
     <script src="./assets/js/modal.js"></script>
