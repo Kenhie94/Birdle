@@ -15,17 +15,16 @@ We wanted to build a game and decided on the inspiration of Wordle.
 Click on the link to play the game. No downloads needed. 
 
 Game: https://kenhie94.github.io/Birdle/
+
 Repo: https://github.com/Kenhie94/Birdle
 
 # Usage
 
-![alt text](assets\images\Birdle_Page_2.jpg)
+![alt text](https://tinyurl.com/3ss69t63)
 ## Let's Play
-![alt text](assets\images\HowToModal.png)
-## Right word is Unit
-![alt text](assets\images\Unitrightword.jpg)
+![alt text](https://tinyurl.com/mu62zsrz)
 ## You Win!
-![alt text](assets\images\YouWin.jpg)
+![alt text](https://tinyurl.com/ycx5d3av)
 
 
 # Credits
