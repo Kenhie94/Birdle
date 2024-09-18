@@ -2,6 +2,7 @@
 const gameArray = [];
 let attempt = 1; // Attempt counter
 
+// Function to store stats into local storage
 function initializeGameStats() {
   const statsPage = localStorage.getItem("statsPage");
   if (!statsPage) {
@@ -156,6 +157,7 @@ function playAgain() {
   startBirdleGame(); // Start a new game with a new word
 }
 
+// Function to update the stats
 function updateStats() {
   const statsPage = JSON.parse(localStorage.getItem("statsPage"));
   const gamesPlayed = statsPage.youWinCounter + statsPage.youLoseCounter;
@@ -167,6 +169,7 @@ function updateStats() {
   document.getElementById("winPercentage").textContent = `Win Percentage: ${winPercentage}%`;
 }
 
+// Event listener when clicking the stats button
 statsBtn.addEventListener("click", function () {
   howToPlayEl.style.display = "none";
   statsEl.style.display = "block";

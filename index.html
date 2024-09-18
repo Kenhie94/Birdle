@@ -34,7 +34,26 @@
         </div>
       </div>
     </nav>
-
+    <!-- Stats Modal -->
+    <div id="statsEl" class="modal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 50rem">
+          <span id="statsClose" class="close">&times;</span>
+          <!-- Card with Stats Information -->
+          <div class="card" style="width: 40rem; margin: auto; padding: 40px; background-color: rgb(237, 233, 226)">
+            <div class="card-body">
+              <h5 class="card-title">Game Stats</h5>
+              <!-- Stats details can be added dynamically -->
+              <p class="card-text" id="gamesPlayed">Games Played: 0</p>
+              <p class="card-text" id="gamesWon">Games Won: 0</p>
+              <p class="card-text" id="gamesLost">Games Lost: 0</p>
+              <p class="card-text" id="winPercentage">Win Percentage: 0%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- How to Play Modal -->
     <div id="howToPlayEl" class="modal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 70rem">
@@ -62,26 +81,6 @@
               <p class="card-text">"WORD" has no correct letters in any spot.</p>
 
               <!-- Example Links (if needed) -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="statsEl" class="modal">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content custom-class" style="background-color: #f6f3e4; width: 50rem">
-          <span id="statsClose" class="close">&times;</span>
-
-          <!-- Card with Stats Information -->
-          <div class="card" style="width: 40rem; margin: auto; padding: 40px; background-color: rgb(237, 233, 226)">
-            <div class="card-body">
-              <h5 class="card-title">Game Stats</h5>
-
-              <!-- Stats details can be added dynamically -->
-              <p class="card-text" id="gamesPlayed">Games Played: 0</p>
-              <p class="card-text" id="gamesWon">Games Won: 0</p>
-              <p class="card-text" id="gamesLost">Games Lost: 0</p>
-              <p class="card-text" id="winPercentage">Win Percentage: 0%</p>
             </div>
           </div>
         </div>
@@ -121,7 +120,7 @@
     </div>
 
     <!-- Everything below is all javascripts -->
-    <script src="./assets/js/keyboardlogic.js"></script>
+    <script src="./assets/js/keyboardLogic.js"></script>
     <script src="./assets/js/wordPool.js"></script>
     <script src="./assets/js/gameLogic.js"></script>
     <script src="./assets/js/modal.js"></script>

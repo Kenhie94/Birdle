@@ -8,15 +8,14 @@ const statsEl = document.getElementById("statsEl");
 const statsBtn = document.getElementById("statsBtn");
 const statsClose = document.getElementById("statsClose"); // Unique ID for close button
 
+// Event Listeners for the stats and how to play button
 howToPlayBtn.addEventListener("click", function() {
   statsEl.style.display = "none"
-
   howToPlayEl.style.display = "block"
 });
 
 statsBtn.addEventListener("click", function() {
   howToPlayEl.style.display = "none"
-
   statsEl.style.display = "block"
 })
 
