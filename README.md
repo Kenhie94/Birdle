@@ -20,11 +20,12 @@ Repo: https://github.com/Kenhie94/Birdle
 
 # Usage
 
-![alt text](https://tinyurl.com/3ss69t63)
 ## Let's Play
-![alt text](https://tinyurl.com/mu62zsrz)
+![A "Let's Play" Image](assets/images/Play.jpg)
 ## You Win!
-![alt text](https://tinyurl.com/ycx5d3av)
+![A "You Win" Image](assets/images/YouWin.jpg)
+## How to Play
+![A "How to play" Image](assets/images/HowToModal.png)
 
 
 # Credits
